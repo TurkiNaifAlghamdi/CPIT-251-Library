@@ -4,10 +4,10 @@
 
 ## Requirements:
 
-1. [Use Case](https://github.com/TurkiNaifAlghamdi/CPIT-251-Library/files/13208065/Bookstore.Use.Case.pdf)
+1. [Use Case Diagram](https://github.com/TurkiNaifAlghamdi/CPIT-251-Library/files/13208065/Bookstore.Use.Case.pdf)
 
 
-2. [Class Diagram](https://github.com/TurkiNaifAlghamdi/CPIT-251-Library/files/13208067/Bookstore.Class.Diagram.pdf)
+2. [Class Diagram](https://github.com/TurkiNaifAlghamdi/CPIT-251-Library/files/13260852/Bookstore.Class.Diagram.pdf)
 
 
 3.[Purchase Sequence Diagram](https://github.com/TurkiNaifAlghamdi/CPIT-251-Library/files/13208071/Bookstore.Purchase.Sequence.Diagram.pdf)
