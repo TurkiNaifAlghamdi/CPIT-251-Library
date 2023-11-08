@@ -1,0 +1,24 @@
+Introduction to IT: A beginner's guide
+T. Alghamdi
+2023
+111113
+Jarir Bookstore
+50
+25.0
+987654321
+Software Development
+A. Alamoudi
+2020
+111112
+King Abdulaziz University
+5
+10.0
+123123123
+Software Engineering
+M. Haddad
+2000
+111111
+King Abdulaziz University
+20
+19.99
+1234567890
