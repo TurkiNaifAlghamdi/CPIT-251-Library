@@ -1,17 +1,21 @@
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Inventory {
+
     private Book root;
     private int totalInventoryCount;
+    private double sales;
     private boolean loaded;
 
     public Inventory() {
         root = null;
         this.loaded = false;
         totalInventoryCount = 0;
+        sales = 0;
     }
 
     public boolean isEmpty() {
@@ -21,7 +25,11 @@ public class Inventory {
     public int getTotalInventoryCount() {
         return totalInventoryCount;
     }
-    
+
+    public double getSales() {
+        return sales;
+    }
+
     public void loadBooks() throws FileNotFoundException {
         File input = new File("Books.txt");
         Scanner read = new Scanner(input);
@@ -39,7 +47,7 @@ public class Inventory {
             if (read.hasNext()) {
                 read.nextLine();
             }
-            
+
             totalInventoryCount += stock;
             root = insert(root, new Book(title, author, year, location, publisher, stock, price, isbn));
         }
@@ -132,13 +140,13 @@ public class Inventory {
     private void updateBookList(Book root, PrintWriter out) {
         if (root != null) {
             updateBookList(root.getLeft(), out);
-            out.println(root.getTitle() + "\n" + root.getAuthor() + "\n" + root.getYear() + "\n" + root.getLocation() + "\n" 
+            out.println(root.getTitle() + "\n" + root.getAuthor() + "\n" + root.getYear() + "\n" + root.getLocation() + "\n"
                     + root.getPublisher() + "\n" + root.getStock() + "\n" + root.getPrice() + "\n" + root.getIsbn());
-            
+
             updateBookList(root.getRight(), out);
         }
     }
-    
+
     public void decreaseStock(String title, int quantity) throws FileNotFoundException {
         Book book = searchBook(root, title);
         if (book != null) {
@@ -147,7 +155,11 @@ public class Inventory {
                 book.setStock(currentStock - quantity);
                 totalInventoryCount -= quantity;
                 System.out.println("Stock decreased for book: " + title);
-                updateBookList();
+                if (book.getStock() <= 5) {
+                    increaseStock(book.getTitle(), 10);
+                } else {
+                    updateBookList();
+                }
             } else {
                 System.out.println("Insufficient stock for book: " + title);
             }
@@ -167,7 +179,7 @@ public class Inventory {
             System.out.println("Book not found: " + title);
         }
     }
-    
+
     private Book searchBook(Book currentBook, String title) {
         if (currentBook == null || currentBook.getTitle().equals(title)) {
             return currentBook;
@@ -178,4 +190,5 @@ public class Inventory {
             return searchBook(currentBook.getRight(), title);
         }
     }
+
 }
