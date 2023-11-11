@@ -1,0 +1,6 @@
+101 Mohammad M Accountant
+102 Sarah F Clerk
+103 Ahmad M HR
+104 Turki M Logistics_Manager
+105 Abdullah M Security
+106 Admin N Admin_User
